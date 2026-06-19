@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printable Hand and Foot Score Sheet</title>
+<meta name="description" content="Free printable Hand and Foot (Canasta) score sheet PDF-ready page — track up to 4 teams across 12 hands, plus a scoring quick-reference.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Printable Hand and Foot Score Sheet">
+<meta property="og:description" content="Free printable Hand and Foot (Canasta) score sheet PDF-ready page — track up to 4 teams across 12 hands, plus a scoring quick-reference.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Hand and Foot Score Calculator</h1>
+  <p>Free running score tracker for Hand and Foot (Canasta) — built for the card table, not a fan club.</p>
+</header>
+<nav class="no-print">
+  <a href="index.html">Scorer</a>
+  <a href="rules.html">Rules &amp; Variants</a>
+  <a href="score-sheet.html" class="active">Printable Score Sheet</a>
+</nav>
+<main>
+  <h2>Printable Score Sheet</h2>
+  <p class="no-print">Use your browser's Print (Ctrl/Cmd+P) to print this page — the
+  navigation and buttons are hidden automatically.</p>
+
+  <table class="history">
+    <thead>
+      <tr>
+        <th>Hand #</th>
+        <th>Team 1</th>
+        <th>Team 2</th>
+        <th>Team 3</th>
+        <th>Team 4</th>
+      </tr>
+    </thead>
+    <tbody id="sheetBody"></tbody>
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <td></td><td></td><td></td><td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Quick Scoring Reference</h2>
+  <table class="history">
+    <thead><tr><th>Card / Event</th><th>Points</th></tr></thead>
+    <tbody>
+      <tr><td>Joker</td><td>50</td></tr>
+      <tr><td>2 / Ace</td><td>20</td></tr>
+      <tr><td>8–K</td><td>10</td></tr>
+      <tr><td>4–7</td><td>5</td></tr>
+      <tr><td>Black 3 played last / stuck in hand</td><td>+5 / -5</td></tr>
+      <tr><td>Red 3 (went out / didn't / stuck in hand)</td><td>100 / 50 / -500</td></tr>
+      <tr><td>Natural canasta</td><td>500</td></tr>
+      <tr><td>Mixed canasta</td><td>300</td></tr>
+      <tr><td>Going out bonus</td><td>100</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.85rem; color:#777;">Full rules and house-rule variants: see the
+  <a href="rules.html">Rules &amp; Variants</a> page.</p>
+</main>
+<footer class="no-print">
+  &copy; 2026 Hand and Foot Score Calculator. Not affiliated with any publisher of Canasta or Hand and Foot rules.
+</footer>
+<script>
+  const body = document.getElementById("sheetBody");
+  for (let i = 1; i <= 12; i++) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + i + "</td><td></td><td></td><td></td><td></td>";
+    body.appendChild(tr);
+  }
+</script>
+</body>
+</html>

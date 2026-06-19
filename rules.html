@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hand and Foot Rules &amp; Common House-Rule Variants</title>
+<meta name="description" content="Hand and Foot (Canasta) rules explained: dealing, melding, going out, scoring, and the most common house-rule variants you'll find at different tables.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hand and Foot Rules &amp; Common House-Rule Variants">
+<meta property="og:description" content="Hand and Foot (Canasta) rules explained: dealing, melding, going out, scoring, and the most common house-rule variants you'll find at different tables.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Hand and Foot Score Calculator</h1>
+  <p>Free running score tracker for Hand and Foot (Canasta) — built for the card table, not a fan club.</p>
+</header>
+<nav>
+  <a href="index.html">Scorer</a>
+  <a href="rules.html" class="active">Rules &amp; Variants</a>
+  <a href="score-sheet.html">Printable Score Sheet</a>
+</nav>
+<main>
+  <h2>How Hand and Foot Works</h2>
+  <p>
+    Hand and Foot is a Canasta variant for four or more players, usually in partnerships,
+    played with multiple decks (typically 5 decks for 4 players, one extra deck per two
+    additional players). Each player is dealt two stacks of cards: a <strong>hand</strong>
+    played first, and a <strong>foot</strong> picked up only after the hand is fully melded
+    or discarded. The deal is large — commonly 11 or 13 cards per stack — which is why
+    games run long and scores run high.
+  </p>
+  <p>
+    Players take turns drawing, melding (laying down groups of 3 or more cards of the same
+    rank), and discarding, trying to build canastas — melds of 7 or more cards of the same
+    rank. A meld becomes a <strong>natural (clean) canasta</strong> if it has no wild cards,
+    or a <strong>mixed (dirty) canasta</strong> if it includes wild cards (2s or Jokers).
+    A team "goes out" when one player melds or discards their entire hand and foot; some
+    tables require at least one canasta completed before going out is allowed.
+  </p>
+
+  <h2>Standard Scoring (the calculator's defaults)</h2>
+  <table class="history">
+    <thead><tr><th>Card / Event</th><th>Points</th></tr></thead>
+    <tbody>
+      <tr><td>Joker</td><td>50</td></tr>
+      <tr><td>2 (deuce)</td><td>20</td></tr>
+      <tr><td>Ace</td><td>20</td></tr>
+      <tr><td>8, 9, 10, J, Q, K</td><td>10</td></tr>
+      <tr><td>4, 5, 6, 7</td><td>5</td></tr>
+      <tr><td>Black 3 (only playable as the very last card, to freeze the pile)</td><td>5</td></tr>
+      <tr><td>Black 3 stuck in hand at end of round</td><td>-5</td></tr>
+      <tr><td>Red 3, melded, your team went out this hand</td><td>100 each</td></tr>
+      <tr><td>Red 3, melded, your team did not go out</td><td>50 each</td></tr>
+      <tr><td>Red 3 stuck in hand at end of round</td><td>-500 each</td></tr>
+      <tr><td>Natural (clean) canasta — no wild cards</td><td>500</td></tr>
+      <tr><td>Mixed (dirty) canasta — includes wild cards</td><td>300</td></tr>
+      <tr><td>Going out bonus</td><td>100</td></tr>
+      <tr><td>Each unmelded card left in hand at end of round</td><td>its point value, subtracted</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Common House-Rule Variants</h2>
+  <p>Hand and Foot has no single official rulebook, so house rules vary a lot. Check these
+  against your table before you start scoring — the calculator's defaults match the most
+  commonly cited ruleset, but every field is editable.</p>
+
+  <div class="variant-card">
+    <strong>Red 3 penalty for an un-melded red three</strong><br>
+    Some tables use -100 per stuck red three instead of -500. The calculator defaults to
+    -500 because it's the most frequently cited value, but adjust the "Red 3s stuck in
+    hand" field freely.
+  </div>
+  <div class="variant-card">
+    <strong>Wild-card canasta bonus</strong><br>
+    A few rule sets add a third canasta tier — an all-wild-card canasta worth 1500 or
+    1000 — on top of natural and mixed. If your table plays this variant, add it manually
+    to the "Natural" or "Mixed" total, or just add it as extra points before logging the
+    hand.
+  </div>
+  <div class="variant-card">
+    <strong>Minimum points to go out</strong><br>
+    Many tables require a minimum partnership score (often 100 or so per player, similar
+    to standard Canasta) before a team is allowed to go out. This doesn't change scoring
+    math, only when a hand can legally end.
+  </div>
+  <div class="variant-card">
+    <strong>Number of decks and cards dealt</strong><br>
+    Standard is roughly one deck per player plus one, with 11 or 13 cards in each of the
+    hand and foot. Some tables deal fewer cards for a faster game — this doesn't change
+    the scoring table, only how long each round runs.
+  </div>
+  <div class="variant-card">
+    <strong>Discard pile freeze rules</strong><br>
+    House rules differ on exactly when the discard pile is "frozen" (requiring a natural
+    pair to pick it up) versus open. This affects gameplay, not scoring.
+  </div>
+
+  <p style="margin-top:2rem; font-size:.85rem; color:#777;">
+    This page summarizes commonly played rules for informational purposes; it is not an
+    official rulebook for any publisher's product.
+  </p>
+</main>
+<footer>
+  &copy; 2026 Hand and Foot Score Calculator. Not affiliated with any publisher of Canasta or Hand and Foot rules.
+</footer>
+</body>
+</html>
