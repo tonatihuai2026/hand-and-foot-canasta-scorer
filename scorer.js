@@ -89,7 +89,24 @@
         const input = document.createElement("input");
         input.type = "number";
         input.min = "0";
+        input.step = "1";
+        input.setAttribute("inputmode", "numeric");
         input.value = team[f.key];
+        // UX: the field defaults to 0; on focus, clear the placeholder 0 and select
+        // everything so the first keystroke replaces it (prevents "09"/"90" from a
+        // cursor landing beside the existing 0). Restore 0 on blur if left empty.
+        input.addEventListener("focus", (e) => {
+          if (e.target.value === "0") e.target.value = "";
+          e.target.select();
+        });
+        input.addEventListener("blur", (e) => {
+          if (e.target.value.trim() === "") {
+            e.target.value = "0";
+            state.teams[idx][f.key] = 0;
+            saveState();
+            updateTotals();
+          }
+        });
         input.addEventListener("input", (e) => {
           state.teams[idx][f.key] = Number(e.target.value) || 0;
           saveState();
