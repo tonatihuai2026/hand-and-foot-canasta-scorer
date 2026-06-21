@@ -45,7 +45,11 @@
 </nav>
 <main>
   <h2>This Hand</h2>
-  <div class="round-controls no-print" style="margin-top:0;">
+  <p class="note no-print" style="margin-top:.4rem;">
+    Enter each team's melds and bonuses for the current hand, then tap
+    <strong>Add Hand to Running Score</strong> to log it and start the next one.
+  </p>
+  <div class="round-controls no-print" style="margin-top:.75rem;">
     <label for="teamCount" style="align-self:center;">Number of teams:</label>
     <select id="teamCount">
       <option value="2">2</option>
@@ -57,7 +61,7 @@
 
   <div class="round-controls">
     <button id="addRound">Add Hand to Running Score</button>
-    <button class="secondary" id="resetAll">Reset Game</button>
+    <button class="danger" id="resetAll">Reset Game</button>
   </div>
 
   <h2 id="historyHeading" style="display:none;">Running Score</h2>
@@ -66,8 +70,11 @@
     <tbody id="historyBody"></tbody>
   </table>
   <div class="grand-totals" id="grandTotals"></div>
+  <p class="empty-state no-print" id="historyEmpty">
+    No hands logged yet. Your running totals will appear here once you add the first hand.
+  </p>
 
-  <p class="no-print" style="margin-top:2rem; font-size:.85rem; color:#777;">
+  <p class="note no-print" style="margin-top:2rem;">
     Point values default to the most common Hand and Foot ruleset (see
     <a href="rules.html">Rules &amp; Variants</a> for the differences you'll see at other
     tables). Everything runs in your browser — nothing you type is sent anywhere.
