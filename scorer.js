@@ -86,9 +86,14 @@
         row.className = "field-row";
         const label = document.createElement("label");
         label.innerHTML = f.label + '<span class="hint">' + f.hint + "</span>";
+        const FIELD_MAX = 999; // sane per-field ceiling: a single hand's count/point-value
+                               // can't realistically exceed this. Rejects absurd entries
+                               // (e.g. 9000) per investor report. The grand total is the
+                               // sum across fields, so this never caps a legitimate score.
         const input = document.createElement("input");
         input.type = "number";
         input.min = "0";
+        input.max = String(FIELD_MAX);
         input.step = "1";
         input.setAttribute("inputmode", "numeric");
         input.value = team[f.key];
@@ -108,7 +113,16 @@
           }
         });
         input.addEventListener("input", (e) => {
-          state.teams[idx][f.key] = Number(e.target.value) || 0;
+          // Clamp to [0, FIELD_MAX] and force a whole number; non-numeric -> 0.
+          // Write back only when the cleaned value differs, so normal typing of
+          // in-range numbers isn't disrupted (cursor/caret preserved).
+          let v = Math.floor(Number(e.target.value));
+          if (!isFinite(v)) v = 0;
+          v = Math.max(0, Math.min(FIELD_MAX, v));
+          if (e.target.value !== "" && String(v) !== e.target.value) {
+            e.target.value = String(v);
+          }
+          state.teams[idx][f.key] = v;
           saveState();
           updateTotals();
         });
